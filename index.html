@@ -7,6 +7,8 @@
     <title>Voi's shop</title>
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/fonts/Font-Awesome/css/all.min.css">
@@ -16,9 +18,10 @@
     <!-- Block Element Modifier BEM -->
     <div class="app">
         <div class="header">
-            <div class="grid">
+            <!-- navbar -->
+            <div class="grid wide">
                 <!-- header navbar -->
-                <div class="header__navbar">
+                <div class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item--separation header__navbar-item--has-qr">
                             Vào cửa hàng trên ứng dụng Voi-Shop
@@ -149,7 +152,34 @@
                 </div>
                 <!-- header with search -->
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <div class="header__mobile">
+
+
+                        <label for="mobile-navbar-checkbox" class="header__mobile-navbar">
+                            <i class="fas fa-bars header__mobile-navbar-icon"></i>
+                        </label>
+                        <label for="mobile-search-checkbox" class="header__mobile-search">
+                            <i class="fas fa-search header__mobile-search-icon"></i>
+                        </label>
+                        <input type="checkbox" id="mobile-navbar-checkbox" class="mobile-checkox">
+                        <label for="mobile-navbar-checkbox" class="header__mobile-navbar-overlay"></label>
+                        <div class="header__mobile-navbar-menu">
+                            <label for="mobile-navbar-checkbox" class="fas fa-times header-mobile-navbar-close"></label>
+                            <ul class="header__mobile-list">
+                                <li class="header__mobile-item">
+                                    <a href="" class="header__mobile-link">Đăng ký</a>
+                                </li>
+                                <li class="header__mobile-item">
+                                    <a href="" class="header__mobile-link">Đăng Nhập</a>
+                                </li>
+                                <li class="header__mobile-item header__mobile-item--logout">
+                                    <a href="" class="header__mobile-link">Đăng Xuất</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="header__logo hide-on-tablet">
                         <a href="/" class="header__logo-link">
                             <svg viewBox="0 0 192 65" class="header__logo-img">
                                 <g fill-rule="evenodd">
@@ -159,7 +189,8 @@
                                 </g>
                             </svg></a>
                     </div>
-                    <div class="header__search">
+                    <input type="checkbox" id="mobile-search-checkbox" class="mobile-checkox">
+                    <div class="header__search ">
                         <div class="header__search-input-wrap">
                             <input type="text" class="header__search-input" placeholder="Nhập để tìm kiếm sản phẩm">
                             <div class="header__search-history">
@@ -230,15 +261,17 @@
                                                         SPF50+/
                                                         PA+++
                                                     </h5>
-                                                    <span class="header__cart-item-price">
-                                                        990.000đ
-                                                    </span>
-                                                    <span class="header__cart-item-multiply">
-                                                        x
-                                                    </span>
-                                                    <span class="header__cart-item-quantity">
-                                                        1
-                                                    </span>
+                                                    <div class="header__cart-item-price-info">
+                                                        <span class="header__cart-item-price">
+                                                            990.000đ
+                                                        </span>
+                                                        <span class="header__cart-item-multiply">
+                                                            x
+                                                        </span>
+                                                        <span class="header__cart-item-quantity">
+                                                            1
+                                                        </span>
+                                                    </div>
                                                 </div>
                                                 <div class="header__cart-item-body">
                                                     <span class="header__cart-item-remove-btn">
@@ -257,15 +290,18 @@
                                                     <h5 class="header__cart-item-name">
                                                         Set dưỡng trắng trị nám Whoo Gong Jin Hyang Seol 5 món
                                                     </h5>
-                                                    <span class="header__cart-item-price">
-                                                        390.000đ
-                                                    </span>
-                                                    <span class="header__cart-item-multiply">
-                                                        x
-                                                    </span>
-                                                    <span class="header__cart-item-quantity">
-                                                        1
-                                                    </span>
+                                                    <div class="header__cart-item-price-info">
+                                                        <span class="header__cart-item-price">
+                                                            390.000đ
+                                                        </span>
+                                                        <span class="header__cart-item-multiply">
+                                                            x
+                                                        </span>
+                                                        <span class="header__cart-item-quantity">
+                                                            1
+                                                        </span>
+                                                    </div>
+
                                                 </div>
                                                 <div class="header__cart-item-body">
                                                     <span class="header__cart-item-remove-btn">
@@ -275,7 +311,7 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <li class="header__cart-item">
+                                    <!-- <li class="header__cart-item">
                                         <a href="" class="header__cart-item-link">
                                             <img src="./assets/img/item3.png" alt="" class="header__cart-img">
                                             <div class="header__cart-item-info">
@@ -283,15 +319,17 @@
                                                     <h5 class="header__cart-item-name">
                                                         Set kem chống nắng Su:m37 Multi Effect
                                                     </h5>
-                                                    <span class="header__cart-item-price">
-                                                        990.000đ
-                                                    </span>
-                                                    <span class="header__cart-item-multiply">
-                                                        x
-                                                    </span>
-                                                    <span class="header__cart-item-quantity">
-                                                        1
-                                                    </span>
+                                                    <div class="header__cart-item-price-info">
+                                                        <span class="header__cart-item-price">
+                                                            990.000đ
+                                                        </span>
+                                                        <span class="header__cart-item-multiply">
+                                                            x
+                                                        </span>
+                                                        <span class="header__cart-item-quantity">
+                                                            1
+                                                        </span>
+                                                    </div>
                                                 </div>
                                                 <div class="header__cart-item-body">
                                                     <span class="header__cart-item-remove-btn">
@@ -311,15 +349,17 @@
                                                         SPF50+/
                                                         PA+++
                                                     </h5>
-                                                    <span class="header__cart-item-price">
-                                                        990.000đ
-                                                    </span>
-                                                    <span class="header__cart-item-multiply">
-                                                        x
-                                                    </span>
-                                                    <span class="header__cart-item-quantity">
-                                                        1
-                                                    </span>
+                                                    <div class="header__cart-item-price-info">
+                                                        <span class="header__cart-item-price">
+                                                            990.000đ
+                                                        </span>
+                                                        <span class="header__cart-item-multiply">
+                                                            x
+                                                        </span>
+                                                        <span class="header__cart-item-quantity">
+                                                            1
+                                                        </span>
+                                                    </div>
                                                 </div>
                                                 <div class="header__cart-item-body">
                                                     <span class="header__cart-item-remove-btn">
@@ -338,15 +378,17 @@
                                                     <h5 class="header__cart-item-name">
                                                         Set dưỡng trắng trị nám Whoo Gong Jin Hyang Seol 5 món
                                                     </h5>
-                                                    <span class="header__cart-item-price">
-                                                        390.000đ
-                                                    </span>
-                                                    <span class="header__cart-item-multiply">
-                                                        x
-                                                    </span>
-                                                    <span class="header__cart-item-quantity">
-                                                        1
-                                                    </span>
+                                                    <div class="header__cart-item-price-info">
+                                                        <span class="header__cart-item-price">
+                                                            390.000đ
+                                                        </span>
+                                                        <span class="header__cart-item-multiply">
+                                                            x
+                                                        </span>
+                                                        <span class="header__cart-item-quantity">
+                                                            1
+                                                        </span>
+                                                    </div>
                                                 </div>
                                                 <div class="header__cart-item-body">
                                                     <span class="header__cart-item-remove-btn">
@@ -364,15 +406,17 @@
                                                     <h5 class="header__cart-item-name">
                                                         Set kem chống nắng Su:m37 Multi Effect
                                                     </h5>
-                                                    <span class="header__cart-item-price">
-                                                        990.000đ
-                                                    </span>
-                                                    <span class="header__cart-item-multiply">
-                                                        x
-                                                    </span>
-                                                    <span class="header__cart-item-quantity">
-                                                        1
-                                                    </span>
+                                                    <div class="header__cart-item-price-info">
+                                                        <span class="header__cart-item-price">
+                                                            990.000đ
+                                                        </span>
+                                                        <span class="header__cart-item-multiply">
+                                                            x
+                                                        </span>
+                                                        <span class="header__cart-item-quantity">
+                                                            1
+                                                        </span>
+                                                    </div>
                                                 </div>
                                                 <div class="header__cart-item-body">
                                                     <span class="header__cart-item-remove-btn">
@@ -381,7 +425,7 @@
                                                 </div>
                                             </div>
                                         </a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                                 <div class="header__cart-total-cart">
                                     <span>Tổng tiền : </span>
@@ -400,15 +444,28 @@
                 </div>
 
             </div>
-            <!-- navbar -->
+            <!-- sort bar -->
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Liên Quan</a>
+                </li>
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Mới Nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán Chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul>
         </div>
         <!-- header -->
         <div class="app__container">
-            <div class="grid">
-                <div class="grid__row app__content">
-                    <div class="grid__column-2">
+            <div class="grid wide">
+                <div class="row app__content sm-gutter">
+                    <div class="col l-2 m-0 c-0">
                         <nav class="category">
-
                             <h3 class="category__heading">
                                 <i class="fas fa-list-ul category__heading-icon"></i>
                                 Danh mục
@@ -434,8 +491,8 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="grid__column-10 ">
-                        <div class="home-filter">
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home-filter hide-on-mobile-tablet">
                             <span class="home-filter__label">
                                 Sắp xếp theo
                             </span>
@@ -462,7 +519,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="home-filter__page">
+                            <div class="home-filter__page ">
                                 <div class="home-filter__paginate">
                                     <span class="home-filter__page-num-current">1
                                     </span>
@@ -480,9 +537,134 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- mobile category -->
+                        <nav class="mobile-category">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        Dụng cụ & thiết bị tiện ích
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
                         <div class="home-product ">
-                            <div class="grid__row">
-                                <div class="grid__column-2-4">
+                            <div class="row sm-gutter">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- home product item -->
                                     <div class="home-product-item">
                                         <a href="#" class="home-product-item__link">
@@ -537,7 +719,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- home product item -->
                                     <div class="home-product-item">
                                         <a href="#" class="home-product-item__link">
@@ -592,7 +774,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- home product item -->
                                     <div class="home-product-item">
                                         <a href="#" class="home-product-item__link">
@@ -647,7 +829,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- home product item -->
                                     <div class="home-product-item">
                                         <a href="#" class="home-product-item__link">
@@ -702,7 +884,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- home product item -->
                                     <div class="home-product-item">
                                         <a href="#" class="home-product-item__link">
@@ -757,7 +939,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- home product item -->
                                     <div class="home-product-item">
                                         <a href="#" class="home-product-item__link">
@@ -812,7 +994,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- home product item -->
                                     <div class="home-product-item">
                                         <a href="#" class="home-product-item__link">
@@ -867,7 +1049,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- home product item -->
                                     <div class="home-product-item">
                                         <a href="#" class="home-product-item__link">
@@ -921,7 +1103,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- home product item -->
                                     <div class="home-product-item">
                                         <a href="#" class="home-product-item__link">
@@ -976,7 +1158,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- home product item -->
                                     <div class="home-product-item">
                                         <a href="#" class="home-product-item__link">
@@ -1086,9 +1268,9 @@
         </div>
         <!-- container -->
         <div class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__column-2-4">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">
                             CHĂM SÓC KHÁCH HÀNG
                         </h3>
@@ -1104,7 +1286,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">
                             GIỚI THIỆU
                         </h3>
@@ -1120,7 +1302,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">DANH MỤC</h3>
                         <ul class="footer__list">
                             <li class="footer__item">
@@ -1134,7 +1316,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">THEO DÕI CHÚNG TÔI TRÊN</h3>
                         <ul class="footer__list">
                             <li class="footer__item">
@@ -1145,8 +1327,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
-                        <h3 class="">VÀO CỬA HÀNG TRÊN ỨNG DỤNG</h3>
+                    <div class="col l-2-4 m-8 c-12">
+                        <h3 class="footer__heading">VÀO CỬA HÀNG TRÊN ỨNG DỤNG</h3>
                         <div class="footer__download">
                             <a href="" class="footer__download-qr-link">
                                 <img src="./assets/img/QR_code.png" alt="Download QR" class="footer__download-qr">
@@ -1166,10 +1348,10 @@
                 </div>
 
             </div>
-            <div class="gird">
+            <div class="grid wide">
                 <div class="footer__bottom">
                     <p class="footer__text">
-                        © 2020 - Bản quyền thuộc về Công ty MyCV
+                        © 2020 - Bản quyền thuộc về Công ty BanDon
                     </p>
                 </div>
             </div>

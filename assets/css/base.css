@@ -8,6 +8,7 @@
     --header-height: 120px;
     --margin-left-search : 12px;
     --star-gold-color: #ffce3d;
+    --header__sort-bar-height: 46px;
 }
 
 *{
@@ -21,11 +22,7 @@ html {
     box-sizing: border-box;
 }
 /* responsive */
-.grid{
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
-}
+
 .gird__full-width{
     width: 100%;
 }
